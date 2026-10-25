@@ -42,8 +42,8 @@ export interface SkillCategory {
 export const portfolioData = {
   personal: {
     name: "CHINMAYI AM",
-    title: "Engineering Ideas Into Reality.",
-    tagline: "AI Enthusiast | Developer | Hackathon Participant",
+    title: "Strive, Achieve, Conquer.",
+    tagline: "AI Enthusiast | Developer | Innovator",
     heroDescription:
       "I'm an Information Science and Engineering student passionate about technology, software development, and building practical solutions. I enjoy exploring new ideas, developing projects, and learning how technology can solve real-world problems.",
     photoUrl: "/assets/aistudio/chinmayi_1633b890.jpeg",
