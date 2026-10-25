@@ -7,6 +7,8 @@ export interface Project {
   technologies: string[];
   status?: string;
   githubUrl?: string;
+  prototypeUrl?: string;
+  prototypeLabel?: string;
   highlights?: string[];
 }
 
@@ -32,6 +34,8 @@ export interface AchievementItem {
   isHighlight?: boolean;
   category: string;
   description: string;
+  prizeUrl?: string;
+  prizeLabel?: string;
 }
 
 export interface SkillCategory {
@@ -84,9 +88,9 @@ export const portfolioData = {
 
   education: [
     {
-      id: "be",
-      level: "Bachelor of Engineering",
-      degreeOrStage: "B.E. in Information Science and Engineering",
+      id: "btech",
+      level: "Bachelor of Technology",
+      degreeOrStage: "B.Tech in Information Science and Engineering",
       institution: "GM University",
       location: "Karnataka, India",
       performance: [
@@ -165,20 +169,43 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "careercraft-ai",
-      title: "CareerCraft AI",
-      category: "Artificial Intelligence / EdTech",
+      id: "routebite",
+      title: "RouteBite",
+      category: "Startup / Food Technology",
       description:
-        "An AI-powered career and education guidance platform concept designed to help students explore educational pathways, career opportunities, scholarships, examinations, and personalized learning roadmaps.",
+        "A bus food delivery platform concept designed to help passengers order food during their journeys and collect it from restaurants at designated bus stops. The idea focuses on making food access more convenient for travelers.",
       longDescription:
-        "CareerCraft AI explores how artificial intelligence can democratize career counseling. It provides structured pathways across various technological and academic domains, helping learners discover tailored scholarships, target examinations, and track milestones along their growth journey.",
-      technologies: ["Python", "AI Concepts", "EdTech", "Web Architecture", "Guidance Roadmaps"],
-      status: "Concept & Prototyping",
-      githubUrl: "https://github.com/chinmayiam/careercraft-ai",
+        "RouteBite addresses a major pain point for long-distance highway bus travelers in India: unpredictable food quality and rushed stops. By integrating scheduled route milestones with local partner kitchens at bus halts, passengers can place orders in advance and pick up fresh meals hassle-free.",
+      technologies: ["Startup Concept", "Food Logistics", "Route Scheduling", "Transit Commerce"],
+      status: "Startup Concept / Validation",
+      githubUrl: "https://github.com/chinmayiam/RouteBite",
       highlights: [
-        "Interactive education roadmap exploration",
-        "Curated examination and scholarship discovery",
-        "Personalized learning trajectory planner",
+        "Pre-order meals tailored to travel itineraries",
+        "Designated pickup coordination at scheduled stops",
+        "Local vendor onboarding model for highway transit",
+      ],
+    },
+    {
+      id: "parking-sentinel",
+      title: "AI-Powered Parking Sentinel Dashboard",
+      category: "Artificial Intelligence / Smart Cities",
+      description:
+        "Designed a dynamic system to monitor parking violations, track live zones, manages cases, and estimate revenue. Integrated AI assistance for real-time alerts and insights, providing a seamless end-to-end solution for smart parking management.",
+      longDescription:
+        "Designed a dynamic system to monitor parking violations, track live zones, manages cases, and estimate revenue. Integrated AI assistance for real-time alerts and insights, providing a seamless end-to-end solution for smart parking management.",
+      technologies: [
+        "AI Monitoring",
+        "Computer Vision Concepts",
+        "Smart City",
+        "Real-Time Alerts",
+        "Dashboard Analytics",
+      ],
+      status: "Prototype & Analytics",
+      githubUrl: "https://github.com/chinmayiam/AI-Powered-Parking-Sentinel-Dashboard",
+      highlights: [
+        "Live zone tracking and automated violation detection",
+        "Integrated case management and revenue projection",
+        "Real-time AI assistance for alerts and operational insights",
       ],
     },
     {
@@ -199,20 +226,20 @@ export const portfolioData = {
       ],
     },
     {
-      id: "routebite",
-      title: "RouteBite",
-      category: "Startup / Food Technology",
+      id: "careercraft-ai",
+      title: "CareerCraft AI",
+      category: "Artificial Intelligence / EdTech",
       description:
-        "A bus food delivery platform concept designed to help passengers order food during their journeys and collect it from restaurants at designated bus stops. The idea focuses on making food access more convenient for travelers.",
+        "An AI-powered career and education guidance platform concept designed to help students explore educational pathways, career opportunities, scholarships, examinations, and personalized learning roadmaps.",
       longDescription:
-        "RouteBite addresses a major pain point for long-distance highway bus travelers in India: unpredictable food quality and rushed stops. By integrating scheduled route milestones with local partner kitchens at bus halts, passengers can place orders in advance and pick up fresh meals hassle-free.",
-      technologies: ["Startup Concept", "Food Logistics", "Route Scheduling", "Transit Commerce"],
-      status: "Startup Concept / Validation",
-      // No GitHub URL as instructed: "display the project without a GitHub button"
+        "CareerCraft AI explores how artificial intelligence can democratize career counseling. It provides structured pathways across various technological and academic domains, helping learners discover tailored scholarships, target examinations, and track milestones along their growth journey.",
+      technologies: ["Python", "AI Concepts", "EdTech", "Web Architecture", "Guidance Roadmaps"],
+      status: "Concept & Prototyping",
+      githubUrl: "https://github.com/chinmayiam/careercraft-ai",
       highlights: [
-        "Pre-order meals tailored to travel itineraries",
-        "Designated pickup coordination at scheduled stops",
-        "Local vendor onboarding model for highway transit",
+        "Interactive education roadmap exploration",
+        "Curated examination and scholarship discovery",
+        "Personalized learning trajectory planner",
       ],
     },
     {
@@ -225,6 +252,8 @@ export const portfolioData = {
         "This smart toll concept investigates self-sustaining transportation infrastructure. By pairing automated RFID vehicle identification with kinetic energy harvesting mechanisms embedded in deceleration lanes, the system demonstrates how transit checkpoints can offset operational energy costs while eliminating traffic congestion.",
       technologies: ["IoT Architecture", "RFID Systems", "Energy Regeneration", "Smart Infrastructure"],
       status: "Research & Hardware Concept",
+      prototypeUrl: "https://lnkd.in/p/dP7sw3df",
+      prototypeLabel: "Working Prototype",
       highlights: [
         "RFID-based contactless vehicle verification",
         "Kinetic energy capture mechanism concept",
@@ -242,6 +271,8 @@ export const portfolioData = {
       isHighlight: true,
       description:
         "Recognized with First Place for developing and pitching a high-impact technology solution addressing critical real-world challenges.",
+      prizeUrl: "https://lnkd.in/p/dpQvhGym",
+      prizeLabel: "View Prize & Recognition",
     },
     {
       id: "reverse-engineering-2nd",
@@ -252,6 +283,8 @@ export const portfolioData = {
       isHighlight: false,
       description:
         "Secured Second Place at Ignitron 2025 by demonstrating analytical depth, system deconstruction, and technical problem-solving under competitive time constraints.",
+      prizeUrl: "https://lnkd.in/p/dFhP2KCF",
+      prizeLabel: "View Prize & Recognition",
     },
     {
       id: "google-arcade-2026",

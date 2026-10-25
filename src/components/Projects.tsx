@@ -65,7 +65,7 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Card Footer Actions */}
-              <div className="pt-4 border-t border-[#E9D5C4]/70 flex items-center justify-between gap-4">
+              <div className="pt-4 border-t border-[#E9D5C4]/70 flex items-center justify-between gap-3 flex-wrap">
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
@@ -75,19 +75,34 @@ export const Projects: React.FC = () => {
                   <ArrowRight className="w-3.5 h-3.5 text-[#C58D70] transition-transform group-hover:translate-x-1" />
                 </button>
 
-                {/* GitHub button only if repository is available (Project 1 & 2) */}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors"
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                    <span>GitHub</span>
-                    <ExternalLink className="w-3 h-3 text-[#C58D70]" />
-                  </a>
-                )}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {/* Prototype Link */}
+                  {project.prototypeUrl && (
+                    <a
+                      href={project.prototypeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors"
+                    >
+                      <span>{project.prototypeLabel || 'Working Prototype'}</span>
+                      <ExternalLink className="w-3 h-3 text-[#C58D70]" />
+                    </a>
+                  )}
+
+                  {/* GitHub button if repository is available */}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      <span>GitHub</span>
+                      <ExternalLink className="w-3 h-3 text-[#C58D70]" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

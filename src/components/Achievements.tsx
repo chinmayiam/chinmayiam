@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Trophy, Award, ShieldCheck } from 'lucide-react';
+import { Trophy, Award, ShieldCheck, ExternalLink } from 'lucide-react';
 
 export const Achievements: React.FC = () => {
   const getIcon = (id: string, isHighlight?: boolean) => {
@@ -70,10 +70,24 @@ export const Achievements: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#E9D5C4]/60">
-                <p className="text-xs text-[#71665E]/90 italic leading-relaxed">
+              <div className="mt-6 pt-4 border-t border-[#E9D5C4]/60 flex flex-col justify-between">
+                <p className="text-xs text-[#71665E]/90 italic leading-relaxed mb-3">
                   {item.description}
                 </p>
+
+                {item.prizeUrl && (
+                  <div className="pt-1">
+                    <a
+                      href={item.prizeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors w-fit"
+                    >
+                      <span>{item.prizeLabel || 'View Prize & Recognition'}</span>
+                      <ExternalLink className="w-3 h-3 text-[#C58D70]" />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           ))}

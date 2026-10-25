@@ -101,27 +101,41 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Footer */}
         <div className="mt-8 pt-6 border-t border-[#E9D5C4] flex flex-wrap items-center justify-between gap-4">
-          {project.githubUrl ? (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              View on GitHub
-              <ExternalLink className="w-3.5 h-3.5 text-[#C58D70]" />
-            </a>
-          ) : (
-            <span className="text-xs text-[#71665E] italic">
-              Project repository link will be available upon deployment.
-            </span>
-          )}
+          <div className="flex flex-wrap items-center gap-3">
+            {project.prototypeUrl && (
+              <a
+                href={project.prototypeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors"
+              >
+                <span>{project.prototypeLabel || 'Working Prototype'}</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#C58D70]" />
+              </a>
+            )}
+
+            {project.githubUrl ? (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#292522] bg-[#FBE9D8] border border-[#E9D5C4] rounded-md hover:bg-[#F2DEC9] hover:border-[#C58D70] transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                View on GitHub
+                <ExternalLink className="w-3.5 h-3.5 text-[#C58D70]" />
+              </a>
+            ) : !project.prototypeUrl ? (
+              <span className="text-xs text-[#71665E] italic">
+                Project repository link will be available upon deployment.
+              </span>
+            ) : null}
+          </div>
 
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-semibold text-[#71665E] hover:text-[#292522] hover:bg-[#FBE9D8] rounded-md transition-colors"
+            className="px-4 py-2 text-xs font-semibold text-[#71665E] hover:text-[#292522] hover:bg-[#FBE9D8] rounded-md transition-colors cursor-pointer"
           >
             Close
           </button>
